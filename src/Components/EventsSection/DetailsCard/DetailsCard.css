@@ -1,0 +1,73 @@
+.details-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(184, 54, 254, 0.2);
+  border-radius: 16px;
+  padding: 28px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.3s ease;
+}
+
+.details-card:hover {
+  background: rgba(184, 54, 254, 0.08);
+  border-color: rgba(184, 54, 254, 0.4);
+}
+
+.details-title {
+  font-family: 'Share Tech', sans-serif;
+  font-size: 1.3rem;
+  color: #fff;
+  margin: 0;
+}
+
+.details-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.details-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.details-meta-item svg {
+  color: #B836FE;
+  flex-shrink: 0;
+}
+
+.details-desc {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.details-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #B836FE, #8B00D4);
+  color: #fff;
+  border-radius: 8px;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 0.85rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+  text-align: center;
+  margin-top: auto;
+}
+
+.details-btn:hover {
+  background: linear-gradient(135deg, #A761FF, #B836FE);
+  color: #fff;
+  transform: translateY(-2px);
+}

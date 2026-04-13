@@ -1,0 +1,133 @@
+.events-section {
+  padding: 80px 24px;
+  background: transparent;
+  min-height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.events-section::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(184, 54, 254, 0.07);
+  border-radius: 50%;
+  filter: blur(100px);
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.events-section::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(235, 71, 254, 0.05);
+  border-radius: 50%;
+  filter: blur(80px);
+  bottom: 0;
+  right: 5%;
+  pointer-events: none;
+}
+
+.events-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.events-block {
+  /* Block wrapper */
+}
+
+.events-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  gap: 16px;
+}
+
+.events-empty-icon {
+  opacity: 0.8;
+  animation: emptyFloat 3s ease-in-out infinite;
+}
+
+@keyframes emptyFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.events-empty-text {
+  font-family: 'Share Tech', sans-serif;
+  font-size: 1.1rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.events-empty-sub {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.88rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.past-events-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.past-event-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.past-event-poster {
+  width: 200px;
+}
+
+@media (max-width: 480px) {
+  .events-section {
+    padding: 40px 20px;
+  }
+}
+
+.events-certs-link-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.events-certs-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid rgba(184, 54, 254, 0.4);
+  border-radius: 8px;
+  color: #B836FE;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 0.82rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.events-certs-link:hover {
+  background: rgba(184, 54, 254, 0.1);
+  border-color: #FA46F2;
+  color: #FA46F2;
+}

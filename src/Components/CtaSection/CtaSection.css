@@ -1,0 +1,118 @@
+.cta-section {
+  padding: 100px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+.cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 300px;
+  background: rgba(184, 54, 254, 0.12);
+  filter: blur(80px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cta-container {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-badge {
+  display: inline-block;
+  background: rgba(184, 54, 254, 0.15);
+  border: 1px solid rgba(184, 54, 254, 0.4);
+  border-radius: 50px;
+  padding: 6px 20px;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 0.85rem;
+  color: #A761FF;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.cta-title {
+  font-family: 'Sarpanch', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #fff;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.cta-desc {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  color: #9ca3af;
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: linear-gradient(135deg, #B836FE, #8B00D4);
+  color: #fff;
+  border-radius: 10px;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 0.95rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.25s;
+  box-shadow: 0 4px 20px rgba(184, 54, 254, 0.3);
+}
+
+.cta-btn-primary:hover {
+  background: linear-gradient(135deg, #A761FF, #B836FE);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 28px;
+  background: transparent;
+  color: #d1d5db;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 0.95rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.25s;
+}
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 40px 20px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-btn-primary,
+  .cta-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

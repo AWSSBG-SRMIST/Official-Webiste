@@ -1,0 +1,120 @@
+.gallery-section {
+  padding: 80px 24px;
+  background: transparent;
+  min-height: 60vh;
+}
+
+.gallery-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gallery-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 60px 0;
+}
+
+.gallery-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(184, 54, 254, 0.2);
+  border-top-color: #B836FE;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.gallery-loading-text {
+  font-family: 'Share Tech', sans-serif;
+  color: #6b7280;
+  margin: 0;
+}
+
+.gallery-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+  gap: 10px;
+}
+
+.gallery-empty-text {
+  font-family: 'Share Tech', sans-serif;
+  font-size: 1.1rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.gallery-empty-sub {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.88rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.gallery-viewer {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Override react-image-gallery styles */
+.image-gallery {
+  background: transparent;
+}
+
+.image-gallery-content {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(184, 54, 254, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image-gallery-slide img {
+  max-height: 500px;
+  object-fit: contain;
+  background: #050005;
+}
+
+.image-gallery-thumbnail {
+  border: 2px solid transparent;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail:hover {
+  border-color: #B836FE;
+}
+
+.image-gallery-thumbnail img {
+  object-fit: cover;
+}
+
+.image-gallery-icon {
+  color: #B836FE;
+  filter: none;
+}
+
+.image-gallery-icon:hover {
+  color: #A761FF;
+}
+
+.image-gallery-description {
+  background: rgba(22, 30, 45, 0.85);
+  color: #d1d5db;
+  font-family: 'Raleway', sans-serif;
+}
+
+.image-gallery-play-button .image-gallery-svg,
+.image-gallery-fullscreen-button .image-gallery-svg {
+  height: 28px;
+  width: 28px;
+}

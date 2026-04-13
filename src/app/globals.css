@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Nova+Square&family=Raleway:wght@300;400;500;600;700&family=Sarpanch:wght@400;700&family=Share+Tech&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000 !important;
+  color: #fff !important;
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(rgba(184, 54, 254, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184, 54, 254, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.footer {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.section-header {
+  font-family: 'Share Tech', sans-serif;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.side-head {
+  background: linear-gradient(to right, #d1d5db, #B836FE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.para {
+  text-align: justify;
+  line-height: 24px;
+  color: #d1d5db;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #B836FE, #EB47FE);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #d1d5db, #B836FE);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Utility */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: #B836FE;
+}
+
+::selection {
+  background: #B836FE;
+  color: #fff;
+}

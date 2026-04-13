@@ -1,0 +1,121 @@
+.intro-section {
+  padding: 80px 24px;
+  background: transparent;
+}
+
+.intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.intro-text {
+  flex: 1.2;
+}
+
+.intro-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.intro-tag {
+  padding: 6px 14px;
+  background: rgba(184, 54, 254, 0.12);
+  border: 1px solid rgba(184, 54, 254, 0.3);
+  border-radius: 50px;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 0.82rem;
+  color: #A761FF;
+  letter-spacing: 0.5px;
+}
+
+.intro-logo-side {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-logo-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(184, 54, 254, 0.2);
+  border-radius: 20px;
+  padding: 40px 36px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.intro-logo-aws {
+  background: #FF9900;
+  color: #000;
+  font-family: 'Amazon Ember', 'Raleway', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  padding: 8px 20px;
+  border-radius: 6px;
+  letter-spacing: -1px;
+}
+
+.intro-logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.intro-logo-cloud {
+  font-family: 'Share Tech', sans-serif;
+  font-size: 1.5rem;
+  color: #fff;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.intro-logo-clubs {
+  font-family: 'Share Tech', sans-serif;
+  font-size: 1.5rem;
+  background: linear-gradient(to right, #B836FE, #A761FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.intro-logo-caption {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin: 4px 0 0;
+}
+
+.intro-logo-badge {
+  background: rgba(184, 54, 254, 0.15);
+  border: 1px solid rgba(184, 54, 254, 0.3);
+  border-radius: 50px;
+  padding: 4px 14px;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 0.75rem;
+  color: #B836FE;
+  letter-spacing: 0.5px;
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .intro-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .intro-logo-side {
+    width: 100%;
+  }
+}

@@ -1,0 +1,48 @@
+.section-header-wrapper {
+  padding: 40px 0 20px;
+}
+
+.section-title {
+  font-family: 'Share Tech', sans-serif;
+  font-size: 2.2rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-family: 'Raleway', sans-serif;
+  color: #9ca3af;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #B836FE, #A761FF);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .section-header-wrapper {
+    padding: 20px 0 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.4rem;
+  }
+}

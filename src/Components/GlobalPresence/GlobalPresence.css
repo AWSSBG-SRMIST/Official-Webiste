@@ -1,0 +1,50 @@
+.global-section {
+  padding: 80px 24px;
+  background: linear-gradient(to bottom, #050005, #000000);
+}
+
+.global-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.world-map-wrapper {
+  margin: 30px 0 40px;
+  position: relative;
+}
+
+.world-map-svg-container {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(184, 54, 254, 0.15);
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.world-map-svg {
+  width: 100%;
+  height: auto;
+}
+
+.world-map-label {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 0.78rem;
+  color: rgba(184, 54, 254, 0.6);
+  letter-spacing: 1px;
+}
+
+.global-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .global-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

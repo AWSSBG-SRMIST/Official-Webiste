@@ -1,0 +1,183 @@
+.join-section {
+  padding: 100px 24px;
+  background: transparent;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.join-section::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  background: rgba(184, 54, 254, 0.08);
+  border-radius: 50%;
+  filter: blur(100px);
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.join-section::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(235, 71, 254, 0.05);
+  border-radius: 50%;
+  filter: blur(80px);
+  bottom: 0;
+  right: 5%;
+  pointer-events: none;
+}
+
+.join-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.join-coming-soon {
+  font-family: 'Sarpanch', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  background: linear-gradient(135deg, #B836FE, #FA46F2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.15;
+  margin: 0 0 16px;
+}
+
+.join-coming-sub {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.05rem;
+  color: #9ca3af;
+  margin: 0 0 64px;
+}
+
+.join-section-label {
+  font-family: 'Share Tech', sans-serif;
+  font-size: 0.72rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  margin: 0 0 20px;
+}
+
+/* Domains */
+.join-domains-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.join-domain-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.join-domain-card:hover {
+  border-color: var(--domain-color);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-4px);
+}
+
+.join-domain-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.join-domain-category {
+  font-family: 'Share Tech', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  margin: 0;
+}
+
+.join-domain-roles {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.join-domain-role {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.82rem;
+  color: #6b7280;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+/* Socials */
+.join-socials-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.join-social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 0.95rem;
+  color: #d1d5db;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.join-social-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--btn-color);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .join-domains-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .join-section {
+    padding: 50px 20px 40px;
+  }
+
+  .join-coming-sub {
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+  }
+
+  .join-domain-card {
+    padding: 20px 16px;
+  }
+}
