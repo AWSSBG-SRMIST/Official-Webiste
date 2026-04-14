@@ -49,9 +49,27 @@
   justify-content: center;
 }
 
-.about-lottie-wrapper {
+.about-visual-card {
   display: flex;
   justify-content: center;
+  align-items: center;
+  background: rgba(184, 54, 254, 0.05);
+  border: 1px solid rgba(184, 54, 254, 0.15);
+  border-radius: 20px;
+  padding: 24px;
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.about-svg {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  filter: drop-shadow(0 0 24px rgba(184, 54, 254, 0.25));
 }
 
 .about-subhead {

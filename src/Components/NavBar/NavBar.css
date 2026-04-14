@@ -4,8 +4,11 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 14px 0;
-  transition: all 0.3s ease;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+  border-bottom: 1px solid transparent;
 }
 
 .navbar-custom.scrolled {
@@ -13,11 +16,11 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(184, 54, 254, 0.2);
-  padding: 10px 0;
 }
 
 .navbar-inner {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;

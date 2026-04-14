@@ -1,11 +1,9 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import Lottie from 'lottie-react';
 import ImageGallery from 'react-image-gallery';
 import { collection, getDocs, orderBy, query } from 'firebase/firestore';
 import { db } from '../../firebase';
-import momentsAnimation from '../../assets/animation/moments.json';
 import SectionHeader from '../SectionHeader/SectionHeader';
 import 'react-image-gallery/styles/image-gallery.css';
 import './GallerySection.css';
@@ -62,7 +60,13 @@ const GallerySection = () => {
 
         {!loading && images.length === 0 && (
           <div className="gallery-empty">
-            <Lottie animationData={momentsAnimation} loop={true} style={{ width: 220, height: 220 }} />
+            <div className="gallery-empty-icon">
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
+                <rect x="8" y="20" width="64" height="46" rx="8" fill="rgba(184,54,254,0.1)" stroke="#B836FE" strokeWidth="1.5" />
+                <circle cx="26" cy="36" r="6" fill="rgba(184,54,254,0.2)" stroke="#FA46F2" strokeWidth="1.2" />
+                <path d="M8 54 L24 40 L36 52 L52 36 L72 54" stroke="#B836FE" strokeWidth="1.5" strokeLinejoin="round" fill="none" strokeDasharray="3 3" />
+              </svg>
+            </div>
             <p className="gallery-empty-text">No moments here yet.</p>
             <p className="gallery-empty-sub">Check back after our next event!</p>
           </div>

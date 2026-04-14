@@ -1,19 +1,23 @@
 'use client'
 
 import React from 'react';
-import Lottie from 'lottie-react';
-import preloaderAnimation from '../../assets/animation/preloader.json';
+import Image from 'next/image';
 import './Loader.css';
 
 const Loader = () => {
   return (
     <div className="loader-wrapper">
       <div className="loader-content">
-        <Lottie
-          animationData={preloaderAnimation}
-          loop={true}
-          style={{ width: 200, height: 200 }}
-        />
+        <div className="loader-logo-wrap">
+          <Image
+            src="/logo.png"
+            alt="AWS Cloud Clubs SRMIST"
+            width={120}
+            height={120}
+            priority
+            className="loader-logo"
+          />
+        </div>
         <p className="loader-text">AWS Cloud Clubs - SRMIST</p>
       </div>
     </div>

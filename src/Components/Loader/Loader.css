@@ -21,7 +21,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
+}
+
+.loader-logo-wrap {
+  animation: logoPulse 1.8s ease-in-out infinite;
+}
+
+.loader-logo {
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+@keyframes logoPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.75; transform: scale(0.96); }
 }
 
 .loader-text {

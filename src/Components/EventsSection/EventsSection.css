@@ -46,8 +46,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0;
-  gap: 12px;
+  padding: 60px 0;
+  gap: 16px;
+}
+
+.events-empty-icon {
+  opacity: 0.8;
+  animation: emptyFloat 3s ease-in-out infinite;
+}
+
+@keyframes emptyFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
 .events-empty-text {
@@ -92,4 +102,32 @@
   .events-section {
     padding: 40px 20px;
   }
+}
+
+.events-certs-link-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.events-certs-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  background: transparent;
+  border: 1px solid rgba(184, 54, 254, 0.4);
+  border-radius: 8px;
+  color: #B836FE;
+  font-family: 'Share Tech', sans-serif;
+  font-size: 0.82rem;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.events-certs-link:hover {
+  background: rgba(184, 54, 254, 0.1);
+  border-color: #FA46F2;
+  color: #FA46F2;
 }
