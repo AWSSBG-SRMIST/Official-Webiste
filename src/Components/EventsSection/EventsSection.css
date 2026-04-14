@@ -1,7 +1,7 @@
 .events-section {
   padding: 80px 24px;
   background: transparent;
-  min-height: 60vh;
+  min-height: unset;
   position: relative;
   overflow: hidden;
 }

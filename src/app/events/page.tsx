@@ -13,10 +13,12 @@ export default function Events() {
   return (
     <>
       <NavBar />
-      <div style={{ paddingTop: "70px" }}>
-        <EventsSection />
+      <div style={{ paddingTop: "70px", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+        <div style={{ flex: 1 }}>
+          <EventsSection />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }
