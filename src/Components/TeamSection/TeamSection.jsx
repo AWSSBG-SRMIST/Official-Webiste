@@ -9,19 +9,19 @@ const teamData = {
   captain: {
     name: "Tanish Poddar",
     role: "Captain",
-    photo: null, linkedIn: "", github: "",
+    photo: "/team/tanish.png", linkedIn: "", github: "",
   },
 
   executive: {
     name: "Siddharth Agarwal",
     role: "Executive",
-    photo: null, linkedIn: "", github: "",
+    photo: "/team/siddharth.png", linkedIn: "", github: "",
   },
 
   directors: [
-    { name: "Rohit Kumar",        role: "Technical Director",  photo: null, linkedIn: "", github: "" },
-    { name: "Animesh Rai",        role: "Corporate Director",  photo: null, linkedIn: "", github: "" },
-    { name: "Praveen Saravanan", role: "Creatives Director",  photo: null, linkedIn: "", github: "" },
+    { name: "Rohit Kumar",        role: "Technical Director",  photo: "/team/rohit-kumar.png",         linkedIn: "", github: "" },
+    { name: "Animesh Rai",        role: "Corporate Director",  photo: "/team/animesh-rai.jpeg",         linkedIn: "", github: "" },
+    { name: "Praveen Saravanan", role: "Creatives Director",  photo: "/team/praveen-saravanan.png",   linkedIn: "", github: "" },
   ],
 
   domains: [
@@ -30,20 +30,20 @@ const teamData = {
       subdomains: [
         {
           label: "Dev",
-          lead:   { name: "Aakarsh Kumar",           role: "Dev Lead",            photo: null, linkedIn: "", github: "" },
-          coLead: { name: "Nishant Ranjan",           role: "Dev Co-Lead",         photo: null, linkedIn: "", github: "" },
+          lead:   { name: "Aakarsh Kumar",           role: "Dev Lead",            photo: "/team/aakarsh-kumar.jpg",       linkedIn: "", github: "" },
+          coLead: { name: "Nishant Ranjan",           role: "Dev Co-Lead",         photo: "/team/nishant-ranjan.png",      linkedIn: "", github: "" },
           members: [],
         },
         {
           label: "AI/ML",
-          lead:   { name: "Akula Sidharth Naidu",    role: "AI/ML Lead",          photo: null, linkedIn: "", github: "" },
-          coLead: { name: "Hemish Jain",              role: "AI/ML Co-Lead",       photo: null, linkedIn: "", github: "" },
+          lead:   { name: "Akula Sidharth Naidu",    role: "AI/ML Lead",          photo: "/team/sidharth-akula.jpeg",     linkedIn: "", github: "" },
+          coLead: { name: "Hemish Jain",              role: "AI/ML Co-Lead",       photo: "/team/hemish-jain.jpeg",        linkedIn: "", github: "" },
           members: [],
         },
         {
           label: "Cloud & DevOps",
-          lead:   { name: "Desai Prathmesh Prakash", role: "Cloud & DevOps Lead", photo: null, linkedIn: "", github: "" },
-          coLead: { name: "Nikhil Ganesh",            role: "Cloud Co-Lead",       photo: null, linkedIn: "", github: "" },
+          lead:   { name: "Desai Prathmesh Prakash", role: "Cloud & DevOps Lead", photo: "/team/prathmesh-desai.jpg",     linkedIn: "", github: "" },
+          coLead: { name: "Nikhil Ganesh",            role: "Cloud Co-Lead",       photo: "/team/nikhil-ganesh.jpg",       linkedIn: "", github: "" },
           members: [],
         },
       ],
@@ -53,26 +53,26 @@ const teamData = {
       subdomains: [
         {
           label: "Events",
-          lead:   { name: "Atharv Raj Pandab", role: "Events Lead",      photo: null, linkedIn: "", github: "" },
-          coLead: { name: "Riya Kandhari",      role: "Events Co-Lead",  photo: null, linkedIn: "", github: "" },
+          lead:   { name: "Riya Kandhari",      role: "Events Lead",     photo: "/team/riya-kandhari.jpeg",    linkedIn: "", github: "" },
+          coLead: { name: "Atharv Raj Pandab",  role: "Events Co-Lead",  photo: "/team/atharv-pandab.jpg",     linkedIn: "", github: "" },
           members: [],
         },
         {
           label: "Public Relations",
-          lead:   { name: "Mohak Dhawan",  role: "PR Lead",     photo: null, linkedIn: "", github: "" },
-          coLead: { name: "Samidha Lade",  role: "PR Co-Lead",  photo: null, linkedIn: "", github: "" },
+          lead:   { name: "Mohak Dhawan",  role: "PR Lead",     photo: "/team/mohak-dhawan.jpeg",   linkedIn: "", github: "" },
+          coLead: { name: "Samidha Lade",  role: "PR Co-Lead",  photo: "/team/samidha-lade.jpeg",   linkedIn: "", github: "" },
           members: [],
         },
         {
           label: "HR & Admin",
-          lead:   { name: "Rajni",          role: "HR & Admin Lead", photo: null, linkedIn: "", github: "" },
-          coLead: { name: "Aanish Nithin A", role: "HR Co-Lead",     photo: null, linkedIn: "", github: "" },
+          lead:   { name: "Rohit Sunkari", role: "HR & Admin Lead",    photo: "/team/rohit-sunkari.jpg", linkedIn: "", github: "" },
+          coLead: { name: "Rajni",          role: "HR & Admin Co-Lead", photo: "/team/rajni.jpeg",         linkedIn: "", github: "" },
           members: [],
         },
         {
           label: "Sponsorship",
-          lead:   { name: "Shreyash Mishra", role: "Sponsorship Lead",    photo: null, linkedIn: "", github: "" },
-          coLead: { name: "Siddhi Jadhav",   role: "Sponsorship Co-Lead", photo: null, linkedIn: "", github: "" },
+          lead:   { name: "Shreyash Mishra", role: "Sponsorship Lead",    photo: "/team/shreyash-mishra.jpg", linkedIn: "", github: "" },
+          coLead: { name: "Siddhi Jadhav",   role: "Sponsorship Co-Lead", photo: "/team/siddhi-jadhav.jpeg",  linkedIn: "", github: "" },
           members: [],
         },
       ],
@@ -82,14 +82,14 @@ const teamData = {
       subdomains: [
         {
           label: "Digital Design",
-          lead:   { name: "Krish Nakul Gohel", role: "Design Lead",    photo: null, linkedIn: "", github: "" },
-          coLead: { name: "Ritesh Rajpal",      role: "Design Co-Lead", photo: null, linkedIn: "", github: "" },
+          lead:   { name: "Krish Nakul Gohel", role: "Design Lead",    photo: "/team/krish-gohel.jpg",    linkedIn: "", github: "" },
+          coLead: { name: "Ritesh Rajpal",      role: "Design Co-Lead", photo: "/team/ritesh-rajpal.png",    linkedIn: "", github: "" },
           members: [],
         },
         {
           label: "Media",
-          lead:   { name: "Piyush Kumar", role: "Media Lead",    photo: null, linkedIn: "", github: "" },
-          coLead: { name: "Arnav Thakur", role: "Media Co-Lead", photo: null, linkedIn: "", github: "" },
+          lead:   { name: "Piyush Kumar", role: "Media Lead",    photo: "/team/piyush-kumar.png",  linkedIn: "", github: "" },
+          coLead: { name: "Arnav Thakur", role: "Media Co-Lead", photo: "/team/arnav-thakur.jpg",  linkedIn: "", github: "" },
           members: [],
         },
         {

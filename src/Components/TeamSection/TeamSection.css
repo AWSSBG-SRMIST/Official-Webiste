@@ -66,6 +66,12 @@
   gap: 16px;
 }
 
+.team-leads-grid {
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ── Tablet: 640px+ → 2 columns ── */
 
 @media (min-width: 640px) {
@@ -81,14 +87,18 @@
     margin-top: 28px;
   }
 
-  .team-directors-grid,
+  .team-directors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
   .team-leads-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
 }
 
-/* ── Desktop: 1024px+ → 3 columns ── */
+/* ── Desktop: 1024px+ → directors 3 cols, leads stay 2 cols centered ── */
 
 @media (min-width: 1024px) {
   .team-section {
@@ -106,7 +116,8 @@
   }
 
   .team-leads-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
     gap: 20px;
   }
 }

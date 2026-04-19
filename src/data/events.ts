@@ -22,75 +22,15 @@ export interface Event {
 
 export const events: Event[] = [
   {
-    id: "cloudsprint-devops-2026",
-    title: "CloudSprint DevOps Challenge",
-    date: "25–28 February 2026",
+    id: "club-inauguration-2026",
+    title: "Club Inauguration",
+    date: "20 April 2026",
     folderId: "REPLACE_WITH_DRIVE_FOLDER_ID",
     coverImageId: "REPLACE_WITH_COVER_IMAGE_ID",
     highlights: [
-      "AWS Cloud & DevOps fundamentals",
-      "Automation and real-world problem solving",
-      "Team-based challenges",
-    ],
-  },
-  {
-    id: "containerization-101-2026",
-    title: "Containerization 101",
-    date: "19–20 February 2026",
-    folderId: "REPLACE_WITH_DRIVE_FOLDER_ID",
-    coverImageId: "REPLACE_WITH_COVER_IMAGE_ID",
-    highlights: [
-      "Containers & Docker fundamentals",
-      "Docker CLI hands-on",
-      "Containerizing applications",
-    ],
-  },
-  {
-    id: "build-ai-games-2025",
-    title: "Build AI Games with Python × Amazon Q",
-    date: "28 November 2025",
-    folderId: "REPLACE_WITH_DRIVE_FOLDER_ID",
-    coverImageId: "REPLACE_WITH_COVER_IMAGE_ID",
-    highlights: [
-      "Python for game logic",
-      "Amazon Q introduction",
-      "AI-assisted development",
-    ],
-  },
-  {
-    id: "innotech-kiet-2025",
-    title: "Innotech KIET – CloudFusion",
-    date: "15 November 2025",
-    folderId: "REPLACE_WITH_DRIVE_FOLDER_ID",
-    coverImageId: "REPLACE_WITH_COVER_IMAGE_ID",
-    highlights: [
-      "Cloud-based problem statements",
-      "Team competition",
-      "Practical AWS thinking",
-    ],
-  },
-  {
-    id: "cloudnova-2025",
-    title: "CloudNova",
-    date: "23–25 September 2025",
-    folderId: "REPLACE_WITH_DRIVE_FOLDER_ID",
-    coverImageId: "REPLACE_WITH_COVER_IMAGE_ID",
-    highlights: [
-      "AWS Cloud Fundamentals",
-      "Linux for Cloud Engineers",
-      "Compute, Storage & Networking",
-    ],
-  },
-  {
-    id: "student-induction-2025",
-    title: "Student Induction Program",
-    date: "12 September 2025",
-    folderId: "REPLACE_WITH_DRIVE_FOLDER_ID",
-    coverImageId: "REPLACE_WITH_COVER_IMAGE_ID",
-    highlights: [
-      "Club introduction & roadmap",
-      "Cloud & DevOps awareness",
-      "Orientation for first-year students",
+      "Official launch of AWS Cloud Club SRMIST",
+      "Meet the team & leadership",
+      "Cloud journey kick-off",
     ],
   },
 ];
