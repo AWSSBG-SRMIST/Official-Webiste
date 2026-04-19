@@ -21,18 +21,22 @@ const CameraIcon = () => (
 );
 
 const EventCard = ({ id, title, date, coverImageId, highlights, photoCount }) => {
-  const coverSrc = `https://drive.google.com/thumbnail?id=${coverImageId}&sz=w600`;
+  const coverSrc = coverImageId
+    ? `https://drive.google.com/thumbnail?id=${coverImageId}&sz=w600`
+    : null;
 
   return (
     <div className="event-card">
       {/* Image */}
       <div className="event-card-img-wrap">
-        <img
-          src={coverSrc}
-          alt={title}
-          className="event-card-img"
-          loading="lazy"
-        />
+        {coverSrc && (
+          <img
+            src={coverSrc}
+            alt={title}
+            className="event-card-img"
+            loading="lazy"
+          />
+        )}
         <div className="event-card-img-overlay" />
 
         {/* Date badge — bottom-left */}
