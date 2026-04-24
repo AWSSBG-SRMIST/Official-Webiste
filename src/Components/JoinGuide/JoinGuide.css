@@ -1,183 +1,190 @@
 .join-section {
-  padding: 100px 24px;
-  background: transparent;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
   position: relative;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
-.join-section::before {
-  content: '';
-  position: absolute;
-  width: 600px;
-  height: 400px;
-  background: rgba(184, 54, 254, 0.08);
-  border-radius: 50%;
-  filter: blur(100px);
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-
-.join-section::after {
-  content: '';
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: rgba(235, 71, 254, 0.05);
-  border-radius: 50%;
-  filter: blur(80px);
-  bottom: 0;
-  right: 5%;
-  pointer-events: none;
-}
-
-.join-container {
-  max-width: 860px;
-  margin: 0 auto;
+.join-head {
   display: flex;
   flex-direction: column;
+  gap: 28px;
+  align-items: flex-start;
+  margin-bottom: 120px;
+  max-width: 1000px;
+}
+
+.join-status {
+  display: inline-flex;
   align-items: center;
-  text-align: center;
-}
-
-.join-coming-soon {
-  font-family: 'Sarpanch', sans-serif;
-  font-size: clamp(2.4rem, 6vw, 4.5rem);
-  background: linear-gradient(135deg, #B836FE, #FA46F2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.15;
-  margin: 0 0 16px;
-}
-
-.join-coming-sub {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.05rem;
-  color: #9ca3af;
-  margin: 0 0 64px;
-}
-
-.join-section-label {
-  font-family: 'Share Tech', sans-serif;
-  font-size: 0.72rem;
-  color: #6b7280;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--violet-line);
+  background: var(--violet-soft);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
-  margin: 0 0 20px;
+  color: var(--violet-2);
 }
 
-/* Domains */
+.join-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--violet-2);
+  box-shadow: 0 0 10px var(--violet-glow);
+  animation: pulse 2.2s var(--ease-out) infinite;
+}
+
+.join-title {
+  color: var(--ink);
+  margin: 0;
+}
+
+.join-sub {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.3vw, 20px);
+  color: var(--ink-2);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0;
+}
+
+.join-domains {
+  padding-top: 60px;
+  border-top: 1px solid var(--violet-line);
+}
+
+.join-domains-head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.join-domains-sub {
+  max-width: 50ch;
+}
+
 .join-domains-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  width: 100%;
+  gap: 24px;
 }
 
 .join-domain-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 16px;
-  padding: 28px 22px;
+  position: relative;
+  padding: 40px 32px 36px;
+  border: 1px solid var(--violet-line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(184, 54, 254, 0.05), rgba(10, 4, 18, 0.5));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+  gap: 20px;
+  transition: border-color 0.5s var(--ease-out), transform 0.5s var(--ease-out);
 }
 
 .join-domain-card:hover {
-  border-color: var(--domain-color);
-  background: rgba(255, 255, 255, 0.04);
-  transform: translateY(-4px);
+  border-color: rgba(235, 71, 254, 0.5);
+  transform: translateY(-6px);
+}
+
+.join-domain-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.join-domain-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: var(--violet);
 }
 
 .join-domain-icon {
+  font-size: 22px;
+  color: var(--ink);
   width: 48px;
   height: 48px;
-  border-radius: 12px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: 14px;
+  background: var(--violet-soft);
+  border: 1px solid var(--violet-line);
 }
 
 .join-domain-category {
-  font-family: 'Share Tech', sans-serif;
-  font-size: 1rem;
-  color: #fff;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: clamp(28px, 3vw, 40px);
+  color: var(--ink);
+  margin: 0;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.join-domain-desc {
+  font-family: var(--font-body);
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1.6;
   margin: 0;
 }
 
 .join-domain-roles {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--violet-line);
+}
+
+.join-domain-roles li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+.join-domain-tick {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--violet-2);
+  box-shadow: 0 0 8px var(--violet-glow);
+  flex-shrink: 0;
+}
+
+.join-domain-line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background: var(--grad-accent);
+  transition: width 0.6s var(--ease-out);
+}
+
+.join-domain-card:hover .join-domain-line {
   width: 100%;
 }
 
-.join-domain-role {
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.82rem;
-  color: #6b7280;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 6px;
-  padding: 5px 10px;
-  text-align: center;
-}
-
-/* Socials */
-.join-socials-row {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.join-social-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  font-family: 'Share Tech', sans-serif;
-  font-size: 0.95rem;
-  color: #d1d5db;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.join-social-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--btn-color);
-  color: #fff;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .join-domains-grid {
     grid-template-columns: 1fr;
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 480px) {
-  .join-section {
-    padding: 50px 20px 40px;
-  }
-
-  .join-coming-sub {
-    font-size: 0.95rem;
-    margin-bottom: 28px;
-  }
-
-  .join-domain-card {
-    padding: 20px 16px;
   }
 }

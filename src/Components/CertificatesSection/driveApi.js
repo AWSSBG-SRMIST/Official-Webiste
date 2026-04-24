@@ -9,6 +9,7 @@ const BASE = 'https://www.googleapis.com/drive/v3/files';
  * Returns array of { id, name }
  */
 export async function fetchFolders(parentId) {
+  if (!API_KEY || !parentId) return [];
   const q = encodeURIComponent(
     `'${parentId}' in parents and mimeType='application/vnd.google-apps.folder' and trashed=false`
   );
@@ -23,6 +24,7 @@ export async function fetchFolders(parentId) {
  * Returns array of { id, name }
  */
 export async function fetchFiles(folderId) {
+  if (!API_KEY || !folderId) return [];
   const q = encodeURIComponent(
     `'${folderId}' in parents and mimeType!='application/vnd.google-apps.folder' and trashed=false`
   );
@@ -44,6 +46,7 @@ export function getDownloadUrl(fileId) {
  * Returns array of { id, name } sorted descending by name (2025, 2024, …)
  */
 export async function fetchYearFolders() {
+  if (!ROOT_FOLDER_ID) return [];
   const folders = await fetchFolders(ROOT_FOLDER_ID);
   return folders.sort((a, b) => b.name.localeCompare(a.name));
 }

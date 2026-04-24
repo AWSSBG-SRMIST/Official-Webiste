@@ -1,132 +1,129 @@
 .team-card {
-  /* Glassmorphism */
-  background:
-    linear-gradient(rgba(13, 13, 18, 0.72), rgba(13, 13, 18, 0.72)) padding-box,
-    linear-gradient(135deg, rgba(168, 85, 247, 0.55), rgba(109, 40, 217, 0.2) 50%, rgba(168, 85, 247, 0.55)) border-box;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  /* Gradient border */
-  border: 1px solid transparent;
-  border-radius: 20px;
-
-  padding: 32px 20px 24px;
-  text-align: center;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  gap: 18px;
+  padding: 22px 22px 26px;
+  border: 1px solid var(--violet-line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(184, 54, 254, 0.05), rgba(10, 4, 18, 0.5));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: border-color 0.5s var(--ease-out), transform 0.5s var(--ease-out);
 }
 
 .team-card:hover {
-  background:
-    linear-gradient(rgba(13, 13, 18, 0.82), rgba(13, 13, 18, 0.82)) padding-box,
-    linear-gradient(135deg, rgba(192, 132, 252, 0.9), rgba(139, 92, 246, 0.45) 50%, rgba(192, 132, 252, 0.9)) border-box;
-  transform: scale(1.03);
-  box-shadow:
-    0 0 28px rgba(168, 85, 247, 0.35),
-    0 10px 40px rgba(0, 0, 0, 0.55);
+  border-color: rgba(235, 71, 254, 0.5);
+  transform: translateY(-6px);
 }
 
-/* ── Avatar ── */
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: radial-gradient(circle at top, rgba(184, 54, 254, 0.25), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-out);
+  pointer-events: none;
+}
+.team-card:hover::before {
+  opacity: 1;
+}
 
 .team-photo-wrapper {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
   overflow: hidden;
-  border: 2px solid transparent;
-  background:
-    linear-gradient(rgba(168, 85, 247, 0.1), rgba(168, 85, 247, 0.1)) padding-box,
-    linear-gradient(135deg, #c084fc, #7c3aed, #c084fc) border-box;
+  background: var(--violet-soft);
+  border: 1px solid var(--violet-line);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
-  margin-bottom: 18px;
-  flex-shrink: 0;
-  transition: box-shadow 0.3s ease;
-}
-
-.team-card:hover .team-photo-wrapper {
-  box-shadow: 0 0 28px rgba(168, 85, 247, 0.45);
-}
-
-.team-initials {
-  font-family: 'Share Tech', sans-serif;
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #c084fc;
-  line-height: 1;
-  user-select: none;
 }
 
 .team-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  filter: saturate(0.9) brightness(0.9);
+  transition: transform 1s var(--ease-out), filter 0.5s var(--ease-out);
 }
 
-/* ── Info ── */
+.team-card:hover .team-photo {
+  transform: scale(1.06);
+  filter: saturate(1) brightness(1);
+}
+
+.team-initials {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  letter-spacing: 0.05em;
+  color: var(--violet);
+  text-transform: uppercase;
+}
 
 .team-info {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 6px;
-  flex: 1;
-  width: 100%;
 }
 
 .team-name {
-  font-family: 'Share Tech', sans-serif;
-  font-size: 1.05rem;
-  color: #ffffff;
+  font-family: var(--font-alt);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .team-designation {
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.75rem;
-  color: #a855f7;
-  margin: 0;
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  color: var(--violet-2);
+  margin: 0;
 }
 
 .team-quote {
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.8rem;
-  color: #6b7280;
-  margin: 4px 0 0;
+  font-family: var(--font-body);
+  color: var(--ink-2);
+  font-size: 13px;
+  line-height: 1.55;
   font-style: italic;
-  line-height: 1.4;
+  margin: 8px 0 0;
 }
-
-/* ── Links ── */
 
 .team-links {
   display: flex;
-  gap: 14px;
-  justify-content: center;
-  margin-top: auto;
-  padding-top: 14px;
+  gap: 10px;
+  margin-top: 8px;
 }
 
-.team-linkedin,
-.team-github {
-  color: rgba(168, 85, 247, 0.7);
-  transition: color 0.2s ease, transform 0.2s ease;
-  display: flex;
+.team-links a {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid var(--violet-line);
+  color: var(--ink-2);
+  transition: color 0.3s var(--ease-out), border-color 0.3s var(--ease-out),
+    background 0.4s var(--ease-out);
 }
 
-.team-linkedin:hover,
-.team-github:hover {
-  color: #c084fc;
-  transform: translateY(-2px);
+.team-links a:hover {
+  color: #fff;
+  border-color: transparent;
+  background: var(--grad-accent);
 }
