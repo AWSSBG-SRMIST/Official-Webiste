@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import ChatWidget from '../Components/ChatWidget/ChatWidget'
 import Cursor from '../Components/Cursor/Cursor'
 import SmoothScroll from '../lib/SmoothScroll'
 
@@ -44,6 +45,7 @@ export default function ClientLayout({
       <SmoothScroll />
       {isDesktop && <Cursor />}
       <main>{children}</main>
+      <ChatWidget />
     </>
   )
 }
