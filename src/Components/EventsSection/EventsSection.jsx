@@ -1,68 +1,129 @@
-'use client';
+'use client'
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import SectionHeader from '../SectionHeader/SectionHeader';
-import EventCard from './EventCard/EventCard';
-import './EventsSection.css';
+import { useState, useEffect, useRef } from 'react'
+import Link from 'next/link'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+// removed SplitText
+import EventCard from './EventCard/EventCard'
+import './EventsSection.css'
 
 const EventsSection = () => {
-  const [events, setEvents] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [events, setEvents] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  const sectionRef = useRef(null)
+  const gridRef = useRef(null)
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await fetch('/api/events');
+        const response = await fetch('/api/events')
         if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.error || 'Failed to fetch events');
+          const errorData = await response.json()
+          throw new Error(errorData.error || 'Failed to fetch events')
         }
-        const data = await response.json();
-        setEvents(data);
+        const data = await response.json()
+        setEvents(data)
       } catch (err) {
-        console.error('Error fetching events:', err);
-        setError(err.message);
+        console.error('Error fetching events:', err)
+        setError(err.message)
       } finally {
-        setIsLoading(false);
+        setIsLoading(false)
       }
-    };
+    }
+    fetchEvents()
+  }, [])
 
-    fetchEvents();
-  }, []);
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const words = gsap.utils.toArray('.events-word')
+      gsap.set(words, { yPercent: 120, opacity: 0 })
+      gsap.to(words, {
+        yPercent: 0,
+        opacity: 1,
+        duration: 1.1,
+        ease: 'power4.out',
+        stagger: 0.05,
+        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' },
+      })
+
+      gsap.from('.events-lede', {
+        opacity: 0,
+        y: 30,
+        duration: 0.9,
+        stagger: 0.15,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' },
+      })
+    }, sectionRef)
+    return () => ctx.revert()
+  }, [])
+
+  useEffect(() => {
+    if (!gridRef.current) return
+    const cards = gsap.utils.toArray('.event-card')
+    const ctx = gsap.context(() => {
+      gsap.from(cards, {
+        opacity: 0,
+        y: 60,
+        duration: 0.9,
+        stagger: 0.08,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: gridRef.current, start: 'top 85%' },
+      })
+    }, gridRef)
+    return () => {
+      ctx.revert()
+      ScrollTrigger.refresh()
+    }
+  }, [events])
 
   return (
-    <section className="events-section">
-      <div className="events-container">
-        <SectionHeader title="Events" subtitle="Workshops, bootcamps, and more" />
-
-        <div className="events-certs-link-wrap">
-          <Link href="/certificates" className="events-certs-link">
-            🎓 View Certificates
-          </Link>
+    <section className="events-section section-shell" ref={sectionRef}>
+      <div className="section-inner">
+        <div className="events-head">
+          <div className="events-head-top">
+            <span className="eyebrow">Archive · Ongoing</span>
+          </div>
+          <h1 className="display-md events-title">
+            <div style={{ overflow: 'hidden', paddingBottom: '0.1em' }}>
+              <span className="events-word" style={{ display: 'inline-block' }}>Events,</span>
+            </div>
+            <div style={{ overflow: 'hidden', paddingBottom: '0.1em' }}>
+              <span className="events-word" style={{ display: 'inline-block' }}>workshops&nbsp;</span>
+              <span className="events-word" style={{ display: 'inline-block' }}>&amp;&nbsp;</span>
+              <span className="events-word" style={{ display: 'inline-block' }}>nights</span>
+            </div>
+            <div style={{ overflow: 'hidden', paddingBottom: '0.1em' }}>
+              <span className="events-word" style={{ display: 'inline-block' }}>spent&nbsp;</span>
+              <span className="events-word" style={{ display: 'inline-block' }}>debugging.</span>
+            </div>
+          </h1>
+          <p className="para events-lede">
+            Every session, bootcamp and hackathon we&apos;ve run — shipped, photographed,
+            remembered. Click a card to open the gallery.
+          </p>
         </div>
 
-        {/* Loading skeleton */}
         {isLoading && (
-          <div className="events-grid mt-top">
+          <div className="events-grid" ref={gridRef}>
             {[...Array(6)].map((_, i) => (
-              <div key={i} className="event-skeleton-card" />
+              <div key={i} className="event-skeleton" />
             ))}
           </div>
         )}
 
-        {/* Error */}
         {error && !isLoading && (
-          <div className="events-error mt-top">
-            <h3>Oops! Something went wrong</h3>
+          <div className="events-error">
+            <h3>Something went wrong.</h3>
             <p>{error}</p>
           </div>
         )}
 
-        {/* Event grid */}
         {!isLoading && !error && events.length > 0 && (
-          <div className="events-grid mt-top">
+          <div className="events-grid" ref={gridRef}>
             {events.map((event) => (
               <EventCard
                 key={event.id}
@@ -77,27 +138,16 @@ const EventsSection = () => {
           </div>
         )}
 
-        {/* Empty state */}
         {!isLoading && !error && events.length === 0 && (
           <div className="events-empty">
-            <div className="events-empty-icon">
-              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="80" height="80">
-                <rect x="10" y="18" width="60" height="52" rx="8" fill="rgba(184,54,254,0.1)" stroke="#B836FE" strokeWidth="1.5" />
-                <rect x="10" y="18" width="60" height="16" rx="8" fill="rgba(184,54,254,0.2)" />
-                <rect x="10" y="26" width="60" height="8" fill="rgba(184,54,254,0.2)" />
-                <line x1="26" y1="10" x2="26" y2="26" stroke="#B836FE" strokeWidth="2" strokeLinecap="round" />
-                <line x1="54" y1="10" x2="54" y2="26" stroke="#B836FE" strokeWidth="2" strokeLinecap="round" />
-                <circle cx="40" cy="52" r="10" fill="rgba(184,54,254,0.15)" stroke="#FA46F2" strokeWidth="1.5" />
-                <text x="40" y="57" textAnchor="middle" fill="#FA46F2" fontSize="12" fontFamily="monospace">?</text>
-              </svg>
-            </div>
-            <p className="events-empty-text">Events Coming Soon</p>
-            <p className="events-empty-sub">Follow us on social media to stay updated!</p>
+            <p className="events-empty-label">Status</p>
+            <h2 className="display-md events-empty-title">Events coming soon.</h2>
+            <p className="para">Follow us on social to be first to know when the next one drops.</p>
           </div>
         )}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default EventsSection;
+export default EventsSection

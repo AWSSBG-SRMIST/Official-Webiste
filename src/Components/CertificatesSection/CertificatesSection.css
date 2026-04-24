@@ -1,370 +1,338 @@
 .certs-section {
-  padding: 80px 24px;
-  background: transparent;
-  min-height: 60vh;
   position: relative;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
-.certs-section::before {
-  content: '';
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: rgba(184, 54, 254, 0.07);
-  border-radius: 50%;
-  filter: blur(100px);
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
+.certs-head {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 64px;
 }
 
-.certs-container {
-  max-width: 1100px;
-  margin: 0 auto;
+.certs-title {
+  color: var(--ink);
 }
 
-/* Search */
+.certs-lede {
+  max-width: 58ch;
+}
+
+.certs-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--violet-line);
+}
+
 .certs-search-wrap {
   position: relative;
+  flex: 1;
+  min-width: 280px;
   max-width: 440px;
-  margin: 28px auto 24px;
-}
-
-.certs-search-icon {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #B836FE;
-  font-size: 1rem;
-  pointer-events: none;
 }
 
 .certs-search {
   width: 100%;
-  background: rgba(184, 54, 254, 0.07);
-  border: 1px solid rgba(184, 54, 254, 0.3);
-  border-radius: 8px;
-  padding: 10px 40px 10px 38px;
-  color: #fff;
-  font-family: 'Share Tech', sans-serif;
-  font-size: 0.88rem;
-  outline: none;
-  transition: border-color 0.2s;
-  box-sizing: border-box;
+  padding: 14px 44px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--violet-soft);
+  border: 1px solid var(--violet-line);
+  border-radius: 999px;
+  transition: border-color 0.3s var(--ease-out);
 }
 
 .certs-search:focus {
-  border-color: #B836FE;
+  outline: none;
+  border-color: var(--violet-2);
 }
 
 .certs-search::placeholder {
-  color: #4b5563;
+  color: var(--ink-3);
+}
+
+.certs-search-icon,
+.certs-search-clear {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ink-3);
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certs-search-icon {
+  left: 16px;
+  pointer-events: none;
 }
 
 .certs-search-clear {
-  position: absolute;
   right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
+  background: transparent;
   border: none;
-  color: #6b7280;
   cursor: pointer;
-  font-size: 0.8rem;
-  padding: 2px;
-  transition: color 0.2s;
+  padding: 6px;
+  border-radius: 999px;
+  transition: color 0.3s var(--ease-out);
 }
-
 .certs-search-clear:hover {
-  color: #FA46F2;
+  color: var(--violet-2);
 }
 
-/* Year Tabs */
 .certs-year-tabs {
   display: flex;
-  justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 32px;
 }
 
 .certs-year-tab {
+  padding: 10px 18px;
+  border: 1px solid var(--violet-line);
   background: transparent;
-  border: 1px solid rgba(184, 54, 254, 0.3);
-  border-radius: 20px;
-  padding: 6px 20px;
-  color: #6b7280;
-  font-family: 'Share Tech', sans-serif;
-  font-size: 0.78rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-2);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.3s var(--ease-out), border-color 0.3s var(--ease-out),
+    background 0.4s var(--ease-out);
 }
 
 .certs-year-tab:hover {
-  border-color: rgba(184, 54, 254, 0.6);
-  color: #d1d5db;
+  color: #fff;
+  border-color: var(--violet-2);
 }
 
-.certs-year-tab.active {
-  background: rgba(184, 54, 254, 0.2);
-  border-color: #B836FE;
-  color: #FA46F2;
+.certs-year-tab.is-active {
+  color: #fff;
+  border-color: transparent;
+  background: var(--grad-accent);
 }
 
-/* Folder Grid */
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  grid-template-columns: 1fr;
+  gap: 14px;
 }
 
-.certs-folder-card {
-  background: rgba(184, 54, 254, 0.07);
-  border: 1px solid rgba(184, 54, 254, 0.22);
-  border-radius: 10px;
-  padding: 18px;
+.certs-folder {
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
+  border: 1px solid var(--violet-line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(184, 54, 254, 0.04), rgba(10, 4, 18, 0.5));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.4s var(--ease-out);
+  overflow: hidden;
 }
 
-.certs-folder-card:hover {
-  border-color: rgba(184, 54, 254, 0.5);
-  background: rgba(184, 54, 254, 0.1);
+.certs-folder:hover,
+.certs-folder.is-expanded {
+  border-color: rgba(235, 71, 254, 0.45);
 }
 
-.certs-folder-card.expanded {
-  border-color: #B836FE;
-  background: rgba(184, 54, 254, 0.06);
-  grid-column: span 2; /* intentionally spans 2 cols to visually highlight expanded state */
-}
-
-.certs-folder-header {
+.certs-folder-head {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px;
+  padding: 22px 24px;
 }
 
 .certs-folder-icon {
-  font-size: 1.6rem;
-  flex-shrink: 0;
+  color: var(--violet-2);
+  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--violet-soft);
+  border: 1px solid var(--violet-line);
 }
 
 .certs-folder-meta {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 3px;
-}
-
-.certs-folder-name {
-  font-family: 'Share Tech', sans-serif;
-  font-size: 0.85rem;
-  color: #fff;
+  gap: 4px;
 }
 
 .certs-folder-year {
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.7rem;
-  color: #6b7280;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--violet);
+}
+
+.certs-folder-name {
+  font-family: var(--font-alt);
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 16px;
+  letter-spacing: -0.005em;
 }
 
 .certs-folder-chevron {
-  font-size: 0.65rem;
-  color: #B836FE;
-  flex-shrink: 0;
+  color: var(--ink-2);
+  font-size: 12px;
+  transition: transform 0.4s var(--ease-out), color 0.3s var(--ease-out);
 }
 
-/* File List */
+.certs-folder-chevron.is-open {
+  transform: rotate(180deg);
+  color: var(--violet-2);
+}
+
 .certs-file-list {
-  margin-top: 16px;
-  border-top: 1px solid rgba(184, 54, 254, 0.15);
-  padding-top: 14px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
+  padding: 8px 20px 20px;
+  border-top: 1px solid var(--violet-line);
+  margin-top: 4px;
+  background: rgba(6, 0, 9, 0.4);
 }
 
-.certs-files-loading {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 0;
-  color: #6b7280;
-  font-family: 'Share Tech', sans-serif;
-  font-size: 0.78rem;
-}
-
+.certs-files-loading,
 .certs-files-empty {
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.8rem;
-  color: #4b5563;
-  margin: 0;
-  padding: 8px 0;
-}
-
-.certs-file-row {
+  padding: 20px 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-3);
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: rgba(184, 54, 254, 0.08);
-  border-radius: 6px;
-  padding: 8px 12px;
-  transition: opacity 0.2s;
+  gap: 12px;
 }
 
-.certs-file-row.dimmed {
-  opacity: 0.3;
+.certs-file {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 12px;
+  border-radius: 10px;
+  transition: background 0.3s var(--ease-out), opacity 0.3s var(--ease-out);
+}
+
+.certs-file:hover {
+  background: var(--violet-soft);
+}
+
+.certs-file.is-dimmed {
+  opacity: 0.28;
 }
 
 .certs-file-icon {
-  font-size: 0.9rem;
-  flex-shrink: 0;
+  color: var(--violet);
+  font-size: 14px;
 }
 
 .certs-file-name {
   flex: 1;
-  font-family: 'Share Tech', sans-serif;
-  font-size: 0.78rem;
-  color: #d1d5db;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ink);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.certs-download-btn {
-  flex-shrink: 0;
-  background: linear-gradient(135deg, #B836FE, #FA46F2);
-  border: none;
-  border-radius: 6px;
-  padding: 5px 12px;
-  color: #fff;
-  font-family: 'Share Tech', sans-serif;
-  font-size: 0.7rem;
+.certs-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--violet-line);
+  border-radius: 999px;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
   cursor: pointer;
-  transition: opacity 0.2s, transform 0.1s;
+  transition: color 0.3s var(--ease-out), border-color 0.3s var(--ease-out),
+    background 0.4s var(--ease-out);
 }
 
-.certs-download-btn:hover {
-  opacity: 0.85;
-  transform: translateY(-1px);
+.certs-download:hover {
+  color: #fff;
+  border-color: transparent;
+  background: var(--grad-accent);
 }
 
-/* Spinner */
+.certs-status {
+  padding: 80px 40px;
+  text-align: center;
+  border: 1px solid var(--violet-line);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(184, 54, 254, 0.04), rgba(10, 4, 18, 0.5));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: var(--ink-2);
+  font-family: var(--font-mono);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.certs-status-error {
+  border-color: rgba(229, 62, 62, 0.4);
+  background: rgba(229, 62, 62, 0.06);
+}
+
 .certs-spinner {
-  width: 48px;
-  height: 48px;
-  border: 3px solid rgba(184, 54, 254, 0.2);
-  border-top-color: #B836FE;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  animation: certSpin 0.8s linear infinite;
+  border: 2px solid var(--violet-line);
+  border-top-color: var(--violet-2);
+  animation: spin 0.9s linear infinite;
 }
+.certs-spinner-sm { width: 16px; height: 16px; border-width: 1.5px; }
 
-.certs-spinner-sm {
-  width: 16px;
-  height: 16px;
-  border: 2px solid rgba(184, 54, 254, 0.2);
-  border-top-color: #B836FE;
-  border-radius: 50%;
-  animation: certSpin 0.8s linear infinite;
-  flex-shrink: 0;
-}
-
-@keyframes certSpin {
-  to { transform: rotate(360deg); }
-}
-
-.certs-status-wrap {
+.certs-empty {
+  padding: 80px 40px;
+  border: 1px solid var(--violet-line);
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(184, 54, 254, 0.04), rgba(10, 4, 18, 0.5));
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  padding: 80px 0;
+  color: var(--ink-2);
 }
 
-.certs-status-text {
-  font-family: 'Share Tech', sans-serif;
-  color: #6b7280;
-  margin: 0;
+.certs-empty-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--violet);
 }
 
-.certs-status-text.error {
-  color: #f87171;
-}
-
-.certs-retry-btn {
-  background: transparent;
-  border: 1px solid rgba(184, 54, 254, 0.4);
-  border-radius: 8px;
-  padding: 8px 24px;
-  color: #B836FE;
-  font-family: 'Share Tech', sans-serif;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.certs-retry-btn:hover {
-  background: rgba(184, 54, 254, 0.1);
-  border-color: #FA46F2;
-  color: #FA46F2;
-}
-
-/* Empty state */
-.certs-empty {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px 0;
-  gap: 12px;
-}
-
-.certs-empty-text {
-  font-family: 'Share Tech', sans-serif;
-  font-size: 1.05rem;
-  color: #9ca3af;
-  margin: 0;
-}
-
-.certs-empty-sub {
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.88rem;
-  color: #4b5563;
-  margin: 0;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .certs-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 640px) {
+  .certs-controls {
+    flex-direction: column;
+    align-items: stretch;
   }
-
-  .certs-folder-card.expanded {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .certs-section {
-    padding: 40px 20px;
-  }
-
-  .certs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .certs-folder-card.expanded {
-    grid-column: span 1;
-  }
-
-  .certs-year-tabs {
-    gap: 6px;
-  }
-
-  .certs-year-tab {
-    padding: 5px 14px;
-    font-size: 0.72rem;
+  .certs-search-wrap {
+    max-width: 100%;
   }
 }

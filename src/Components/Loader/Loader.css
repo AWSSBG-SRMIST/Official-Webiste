@@ -1,55 +1,128 @@
-.loader-wrapper {
+.loader-root {
   position: fixed;
   inset: 0;
-  background: #000000;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px var(--gutter);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.loader-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--violet-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--violet-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 80%);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.loader-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184, 54, 254, 0.3), transparent 70%);
+  filter: blur(80px);
+  z-index: -1;
+}
+
+.loader-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 11px;
+  color: var(--ink-3);
+}
+
+.loader-eyebrow {
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: fadeOut 0.5s ease 2.5s forwards;
+  gap: 10px;
+}
+.loader-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--violet);
 }
 
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-  }
+.loader-counter {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 88px);
+  color: var(--ink);
+  letter-spacing: -0.02em;
 }
 
-.loader-content {
+.loader-center {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-}
-
-.loader-logo-wrap {
-  animation: logoPulse 1.8s ease-in-out infinite;
+  gap: 36px;
+  text-align: center;
 }
 
 .loader-logo {
-  object-fit: contain;
-  border-radius: 12px;
+  filter: drop-shadow(0 0 30px rgba(184, 54, 254, 0.5));
+  animation: loader-float 2.4s var(--ease-io) infinite alternate;
 }
 
-@keyframes logoPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.75; transform: scale(0.96); }
+@keyframes loader-float {
+  from { transform: translateY(-6px); }
+  to { transform: translateY(6px); }
 }
 
-.loader-text {
-  font-family: 'Michroma', sans-serif;
-  font-size: clamp(0.7rem, 3.5vw, 1.2rem);
-  color: #B836FE;
-  letter-spacing: 2px;
+.loader-title {
+  font-family: var(--font-display);
   text-transform: uppercase;
-  text-align: center;
-  padding: 0 20px;
-  animation: pulse 1.5s ease-in-out infinite;
+  font-size: clamp(32px, 5.5vw, 72px);
+  line-height: 0.95;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin: 0;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+.loader-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.loader-bar {
+  width: 100%;
+  height: 1px;
+  background: var(--violet-line);
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  width: 100%;
+  background: var(--grad-accent);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.loader-status {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 10px;
+  color: var(--ink-3);
 }

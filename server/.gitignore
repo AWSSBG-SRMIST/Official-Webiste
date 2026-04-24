@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/logs.json
+data/counters.json
+data/knowledge.json
+data/raw/
