@@ -1,0 +1,15 @@
+{
+  "about": "AWS Cloud Clubs SRMIST is a student-run community at SRM Institute of Science and Technology focused on cloud computing, AWS services, and applied projects. We run workshops, talks, and hackathons to help members build real cloud skills.",
+  "mission": "Empower SRMIST students to learn, build, and ship with AWS — together.",
+  "team": [
+    { "name": "Club Lead", "role": "President", "photo_url": "" },
+    { "name": "Tech Lead", "role": "Vice President - Tech", "photo_url": "" },
+    { "name": "Corp Lead", "role": "Vice President - Corp", "photo_url": "" }
+  ],
+  "contact_email": "awscc@srmist.edu.in",
+  "socials": {
+    "instagram": "https://instagram.com/awscc_srmist",
+    "linkedin": "https://linkedin.com/company/awscc-srmist",
+    "github": "https://github.com/AWSCC-SRMIST"
+  }
+}

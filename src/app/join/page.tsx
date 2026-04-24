@@ -6,17 +6,18 @@ import Footer from '../../Components/Footer/Footer'
 
 export const metadata: Metadata = {
   title: 'Join | AWSCC-SRMIST',
-  description: 'Join AWS Cloud Clubs - SRMIST. Recruitment starting soon. Follow us to stay updated.',
+  description:
+    'Join AWS Cloud Clubs - SRMIST. Recruitment starting soon. Follow us to stay updated.',
 }
 
 export default function Join() {
   return (
     <>
       <NavBar />
-      <div style={{ paddingTop: '70px' }}>
+      <main>
         <JoinGuide />
         <Faq />
-      </div>
+      </main>
       <Footer />
     </>
   )

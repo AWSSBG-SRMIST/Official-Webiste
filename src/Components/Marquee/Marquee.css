@@ -1,0 +1,44 @@
+.mq {
+  position: relative;
+  overflow: hidden;
+  padding: 32px 0;
+  border-top: 1px solid var(--violet-line);
+  border-bottom: 1px solid var(--violet-line);
+  background: linear-gradient(90deg, rgba(184, 54, 254, 0.05), rgba(235, 71, 254, 0.02));
+}
+
+.mq-track {
+  display: inline-flex;
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.mq-item {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+  flex-shrink: 0;
+}
+
+.mq-text {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: clamp(32px, 6vw, 84px);
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.mq-item:nth-child(2n) .mq-text {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mq-star {
+  font-size: clamp(18px, 3vw, 32px);
+  color: var(--violet);
+}
