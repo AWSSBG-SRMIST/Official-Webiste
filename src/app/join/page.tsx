@@ -6,7 +6,7 @@ import Footer from '../../Components/Footer/Footer'
 
 export const metadata: Metadata = {
   title: 'Join | AWSCC-SRMIST',
-  description: 'Join AWS Cloud Clubs - SRMIST. Recruitment starting soon. Follow us to stay updated.',
+  description: 'Join AWS Student Builder Group - SRMIST. Recruitment starting soon. Follow us to stay updated.',
 }
 
 export default function Join() {

@@ -1,10 +1,10 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import './NavBar.css';
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import "./NavBar.css";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -12,22 +12,28 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/events', label: 'Events' },
-    { path: '/team', label: 'Team' },
-    { path: '/join', label: 'Join' },
+    { path: "/", label: "Home" },
+    { path: "/events", label: "Events" },
+    { path: "/team", label: "Team" },
+    { path: "/join", label: "Join" },
   ];
 
   return (
-    <nav className={`navbar-custom ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar-custom ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-inner">
         <Link href="/" className="navbar-brand">
-          <Image src="/logo.png" alt="AWS Cloud Clubs SRMIST" width={56} height={56} className="brand-logo" />
+          <Image
+            src="/logo.png"
+            alt="AWS Student Builder Group SRMIST"
+            width={56}
+            height={56}
+            className="brand-logo"
+          />
         </Link>
 
         <div className="nav-links">
@@ -35,7 +41,7 @@ const NavBar = () => {
             <Link
               key={path}
               href={path}
-              className={`nav-link-item ${pathname === path ? 'active' : ''}`}
+              className={`nav-link-item ${pathname === path ? "active" : ""}`}
             >
               {label}
             </Link>

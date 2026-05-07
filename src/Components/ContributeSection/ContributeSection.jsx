@@ -1,25 +1,25 @@
-'use client'
+"use client";
 
-import React from 'react';
-import { FaHandshake, FaLightbulb } from 'react-icons/fa';
-import SectionHeader from '../SectionHeader/SectionHeader';
-import BlurCard from '../BlurCard/BlurCard';
-import './ContributeSection.css';
+import React from "react";
+import { FaHandshake, FaLightbulb } from "react-icons/fa";
+import SectionHeader from "../SectionHeader/SectionHeader";
+import BlurCard from "../BlurCard/BlurCard";
+import "./ContributeSection.css";
 
 const ways = [
   {
     icon: <FaHandshake size={32} />,
-    title: 'Sponsor Us',
-    desc: 'Want to support the next generation of cloud builders? Partner with AWS Cloud Clubs - SRMIST to sponsor events, workshops, or resources. Get visibility with 1000+ students.',
-    cta: 'Get in Touch',
-    link: 'mailto:sponsorship.awscc.srmist@gmail.com?subject=Sponsorship Inquiry',
+    title: "Sponsor Us",
+    desc: "Want to support the next generation of cloud builders? Partner with AWS Student Builder Group - SRMIST to sponsor events, workshops, or resources. Get visibility with 1000+ students.",
+    cta: "Get in Touch",
+    link: "mailto:sponsorship.awscc.srmist@gmail.com?subject=Sponsorship Inquiry",
   },
   {
     icon: <FaLightbulb size={32} />,
-    title: 'Propose an Event',
-    desc: 'Have an idea for a workshop, talk, or hackathon you want to conduct? We\'d love to hear it. Bring your expertise to our community.',
-    cta: 'Suggest an Event',
-    link: 'mailto:awscc.srmist@gmail.com?subject=Event Proposal',
+    title: "Propose an Event",
+    desc: "Have an idea for a workshop, talk, or hackathon you want to conduct? We'd love to hear it. Bring your expertise to our community.",
+    cta: "Suggest an Event",
+    link: "mailto:awscc.srmist@gmail.com?subject=Event Proposal",
   },
 ];
 

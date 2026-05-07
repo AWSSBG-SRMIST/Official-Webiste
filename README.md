@@ -1,6 +1,6 @@
-# AWS Cloud Club - SRMIST Website
+# AWS Student Builder Group - SRMIST Website
 
-Official website of AWS Cloud Club at SRM Institute of Science and Technology, built with Next.js 16.
+Official website of AWS Student Builder Group at SRM Institute of Science and Technology, built with Next.js 16.
 
 ## Getting Started
 

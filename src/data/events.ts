@@ -28,7 +28,7 @@ export const events: Event[] = [
     folderId: "1jzxVx5pnNH-heGDZyj_8LgkMkXTrQBru",
     coverImageId: "",
     highlights: [
-      "Official launch of AWS Cloud Club SRMIST",
+      "Official launch of AWS Student Builder Group SRMIST",
       "Meet the team & leadership",
       "Cloud journey kick-off",
     ],

@@ -1,8 +1,8 @@
-'use client'
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import './Loader.css';
+import React from "react";
+import Image from "next/image";
+import "./Loader.css";
 
 const Loader = () => {
   return (
@@ -11,14 +11,14 @@ const Loader = () => {
         <div className="loader-logo-wrap">
           <Image
             src="/logo.png"
-            alt="AWS Cloud Clubs SRMIST"
+            alt="AWS Student Builder Group SRMIST"
             width={120}
             height={120}
             priority
             className="loader-logo"
           />
         </div>
-        <p className="loader-text">AWS Cloud Clubs - SRMIST</p>
+        <p className="loader-text">AWS Student Builder Group - SRMIST</p>
       </div>
     </div>
   );

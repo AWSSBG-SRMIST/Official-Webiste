@@ -5,7 +5,7 @@ import Footer from '../../Components/Footer/Footer'
 
 export const metadata: Metadata = {
   title: 'Certificates | AWSCC-SRMIST',
-  description: 'Download your certificate from any AWS Cloud Club SRMIST event.',
+  description: 'Download your certificate from any AWS Student Builder Group SRMIST event.',
 }
 
 export default function Certificates() {

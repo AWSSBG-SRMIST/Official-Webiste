@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { FaArrowRight } from 'react-icons/fa';
-import './Hero.css';
+import React from "react";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+import "./Hero.css";
 
 const Hero = () => {
   return (
@@ -16,40 +16,40 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-badge">
           <span className="hero-badge-dot"></span>
-          Powered by{''}
+          Powered by{""}
           <a
             href="https://builder.aws.com/community/cloud-clubs"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-badge-link"
           >
-            AWS Cloud Clubs Community Program
+            AWS Student Builder Group Community Program
           </a>
         </div>
 
-
         <h1 className="hero-title">
-          <span className="hero-title-aws">AWS</span>{' '}
-          <span className="hero-title-gradient">Cloud Clubs</span>
+          <span className="hero-title-aws">AWS</span>{" "}
+          <span className="hero-title-gradient">Student Builder Group</span>
           <br />
           <span className="hero-title-gradient">SRMIST - KTR</span>
         </h1>
 
-        <p className="hero-tagline">
-          Think Big, Build Bigger.
-        </p>
+        <p className="hero-tagline">Think Big, Build Bigger.</p>
 
         <div className="hero-actions">
           <Link href="/join" className="hero-btn-primary">
             Join the Club <FaArrowRight />
           </Link>
         </div>
-
       </div>
 
       <div className="hero-illustration">
         <div className="hero-logo-wrap">
-          <img src="/logo-nobg.png" alt="AWS Cloud Clubs SRMIST" className="hero-logo-img" />
+          <img
+            src="/logo-nobg.png"
+            alt="AWS Student Builder Group SRMIST"
+            className="hero-logo-img"
+          />
         </div>
       </div>
 

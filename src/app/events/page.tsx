@@ -6,7 +6,7 @@ import Footer from "../../Components/Footer/Footer";
 export const metadata: Metadata = {
   title: "Events | AWSCC-SRMIST",
   description:
-    "Upcoming and past events by AWS Cloud Clubs - SRMIST. Workshops, bootcamps, and more.",
+    "Upcoming and past events by AWS Student Builder Group - SRMIST. Workshops, bootcamps, and more.",
 };
 
 export default function Events() {
